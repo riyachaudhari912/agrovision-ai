@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="bg-green-700 text-white text-center p-4">
-      © 2026 AgroVision AI. All Rights Reserved.
+    <footer className="bg-green-700 text-white text-center py-4 mt-10">
+      <p>© 2026 AgroVision AI. All Rights Reserved.</p>
     </footer>
   );
 }

@@ -1,9 +1,9 @@
 function Card({ title, description }) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-      <h2 className="text-xl font-bold text-green-700 mb-3">
+    <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold text-green-700 mb-3">
         {title}
-      </h2>
+      </h3>
 
       <p className="text-gray-600">
         {description}

@@ -10,31 +10,33 @@ function Home() {
 
       <Hero />
 
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-8">
+      <section className="py-12 px-6">
+        <h2 className="text-3xl font-bold text-center mb-10">
           Our Features
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
           <Card
             title="Crop Disease Detection"
-            description="Identify crop diseases using AI-powered image analysis."
+            description="Identify crop diseases from leaf images using AI-powered computer vision."
           />
 
           <Card
             title="Crop Health Monitoring"
-            description="Track crop growth and health conditions in real time."
+            description="Monitor crop growth and health conditions using image and sensor data."
           />
 
           <Card
             title="AI Recommendations"
-            description="Get suggestions for irrigation, fertilizers and pest control."
+            description="Get personalized recommendations for irrigation, fertilizers, and pest control."
           />
 
           <Card
             title="Yield Prediction"
-            description="Predict future crop yield using agricultural data."
+            description="Predict crop yield using machine learning and agricultural data analysis."
           />
+
         </div>
       </section>
 
