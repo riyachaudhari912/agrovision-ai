@@ -1,0 +1,62 @@
+import { useEffect, useRef } from "react";
+
+/**
+ * Modal Component
+ * Props:
+ * - isOpen: boolean to control modal visibility
+ * - onClose: function to close modal
+ * - title: modal heading
+ * - children: modal body content
+ */
+
+const Modal = ({ isOpen, onClose, title, children }) => {
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      modalRef.current?.focus();
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+      <div
+        ref={modalRef}
+        tabIndex={-1}
+        className="w-full max-w-md rounded-xl bg-white p-6 shadow-2xl outline-none"
+      >
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-xl font-bold text-gray-900">
+            {title}
+          </h2>
+
+          <button
+            onClick={onClose}
+            className="text-2xl font-semibold text-gray-500 transition hover:text-red-500"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="text-gray-700 leading-relaxed">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Modal;
